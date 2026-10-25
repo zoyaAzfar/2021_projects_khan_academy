@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>The Real News [Issue 1]</title>
+        <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Material+Icons|DM+Sans:400,500,600|DM+Serif+Display|'>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+        <!-- General Styles -->
+        <style>
+        :root {
+        /* Fonts */
+        --heading-font:"DM Serif Display";
+        --paragraph-font:"DM Sans";
+        --text-color:#42403f;
+        --background-color:#e4f2ef;
+        
+        /* Normals */
+        --redish-color:#ef694d;
+        --yellow-color:#dddb76;
+        --turqiouse-color:#388895;
+        --gray-color:#42403f;
+        --white-color:#ffffff;
+        
+        /* Lights */
+        --light-blue-color:#e4f2ef;
+        }
+        
+        html,
+        body {
+        margin: 0;
+        padding: 0;
+        font-size: 1em;
+        font-family: var(--paragraph-font);
+        background-color: var(--background-color);
+        color: var(--text-color);
+        overflow-x: hidden;
+        transition: 0.5s;
+        font-weight: 500;
+        }
+        
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+        font-family: var(--heading-font);
+        color: var(--text-color);
+        }
+        
+        button {
+        font-family:var(--paragraph-font);
+        }
+        
+        button:hover {
+        cursor:pointer;
+        }
+        
+        a {
+         text-decoration:none;
+         border-bottom:1px dotted gray;
+         color:var(--text-color);
+        }
+        
+        ::selection {
+          background-color:rgba(237, 192, 197);
+        }
+        
+        ::-webkit-scrollbar{
+          width:10px;        
+        }
+        
+        ::-webkit-scrollbar-thumb {
+          background-color:var(--redish-color);
+        }
+        </style>
+        
+        <!-- Navigation Bar -->
+        <style>
+             .nav-bar {
+                box-shadow: 0px 5px 10px rgb(186, 186, 186);
+                background: var(--turqiouse-color);
+                margin: 0 auto;
+                
+                width: 100%;
+                height:38px;
+                
+                display: flex;
+                justify-content: space-evenly;
+                
+                position:fixed;
+                z-index:255;
+                
+                padding:7px;
+               
+                user-select:none;
+                
+                overflow:hidden;
+                
+                
+             }
+             .nav-bar button{
+                border:none;
+                background-color:inherit;
+                
+                color:white;
+                font-size:1em;
+                
+                position:relative;
+                right:45px;
+                
+                padding:9px;
+                text-decoration: none;
+                -webkit-transition: all 200ms ease;
+                transition: all 200ms ease;
+                cursor: pointer;
+             }
+             
+             .nav-bar button::after {
+                    content: "";
+                    width: 100%;
+                    height: 2px;
+                    margin-top: -1px;
+                    display: block;
+                    background: #14bf96aa;
+                    transition: inherit;
+                    transform: scaleX(0);
+             }
+        
+             .nav-bar button:focus::after,
+                .nav-bar button:hover::after {
+                    transform: scaleX(1);
+             }
+        
+             .nav-bar button:hover {
+                    color: #14bf96;
+                    transition: 0.25s;
+             }
+             
+             
+        </style>
+        
+        <!-- Header -->
+        <style>
+                header {
+                    height: 95vh;
+                    width: 100%;
+                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3), inset 0 0 0 px rgba(0, 0, 0, 0.3);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    
+                    user-select:none;
+               }
+      
+                .header-text {
+                  text-align: left;
+                  position: absolute;
+                  top: 51%;
+                  left: 35%;
+                  transform: translate(-50%, -50%);
+                }
+                
+                .header-text p {
+                    text-indent: 15%;
+                    font-size: 2vw;
+                }
+              
+                .header-text h1 {
+                    margin-top: -3vw;
+                    font-size: 8vw;
+                    font-weight: 600;
+                    font-family: 'DM Serif Display';
+                }
+        </style>
+        
+        <!--Footer -->
+        <style>
+               #footer {
+                background-color:var(--turqiouse-color);
+                color:var(--white-color);
+                
+                padding:11px;
+                text-align:center;
+                
+                margin-top:90px;
+               } 
+               
+               #footer hr {
+                border:none;
+                width: 100%;
+                height: 5px;
+                background-color: linear-gradient(300deg, rgba(241, 255, 219), rgba(200, 252, 131));
+                margin: -15px 0 5% 0;
+                border-radius: 10px;
+               }
+        </style>
+        
+        <!-- General Page Content -->
+        <style>
+                .content {
+                  background-color:white;
+                  box-shadow: 0px 5px 10px rgb(158, 158, 158);
+                  border-radius:10px;
+                  padding:15px;
+                  margin:15px;
+                }
+                
+                .content h1 {
+                 font-size:2em;
+                 text-shadow: 0px 5px 5px rgba(77, 77, 77, 0.3);
+                 text-align:center;
+                }
+                
+                #subtitle {
+                 font-size:15px;
+                 text-decoration:italic;
+                 color:rgba(219, 219, 219);
+                 font-family:var(--paragraph-font);
+                 text-align:center;
+                }
+                
+                .jump-to {
+                  background-color:var(--turqiouse-color);
+                  box-shadow: 0px 5px 10px rgb(158, 158, 158);
+                  border-radius:10px;
+                  padding:35px;
+                  margin:35px;
+                }
+                
+                .jump-to p {
+                  font-size:1.3em;
+                }
+        </style>
+        
+        <!-- Homepage Styles -->
+        <style>
+                .spoiler {
+                    padding:10px;
+                    margin:11px;
+                    
+                    background:var(--yellow-color);
+                    
+                    color:rgb(64, 64, 64);
+                    box-shadow: 1px 4px 10px rgb(82, 82, 82);
+                    transition:0.5s;
+                }
+        
+                .container {
+                        display:flex;
+                }
+        
+                .spoiler:hover {
+                    transform:rotate(2deg);
+                }
+        </style>
+        
+        <!-- Scrolling Animation -->
+        <style>
+      .js-scroll {
+        opacity: 0;
+        transition: opacity 0.5s;
+      }
+      
+      .js-scroll.scrolled {
+        opacity: 1;
+      }
+      
+      .scrolled.fade-in {
+        animation: fade-in 0.5s ease-in-out both;
+      }
+      
+      .yayyy {
+        opacity: 1;
+      }
+      
+      .scrolled.yayyy {
+        animation: go-mad 1s ease-in-out 3;
+      }
+      
+      .scrolled.fade-in-bottom {
+        animation: fade-in-bottom 0.5s ease-in-out both;
+      }
+      
+      .scrolled.slide-left {
+        animation: slide-in-left 0.5s ease-in-out both;
+      }
+      
+      .scrolled.slide-right {
+        animation: slide-in-right 0.5s ease-in-out both;
+      }
+      
+      @keyframes slide-in-left {
+        0% {
+          -webkit-transform: translateX(-100px);
+          transform: translateX(-100px);
+          opacity: 0;
+        }
+        
+        100% {
+          -webkit-transform: translateX(0);
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+      
+      @keyframes slide-in-right {
+        0% {
+          -webkit-transform: translateX(100px);
+          transform: translateX(100px);
+          opacity: 0;
+        }
+        
+        100% {
+          -webkit-transform: translateX(0);
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+      
+      @keyframes fade-in-bottom {
+        0% {
+          -webkit-transform: translateY(50px);
+          transform: translateY(50px);
+          opacity: 0;
+        }
+        
+        100% {
+          -webkit-transform: translateY(0);
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+      
+      @keyframes fade-in {
+        0% {
+          opacity: 0;
+        }
+        
+        100% {
+          opacity: 1;
+        }
+      }
+      
+      
+    </style>
+    </head>
+    <body>
+        
+        <!-- Navigation Bar -->
+        <nav class = "nav-bar"  id = "responsive-nav">
+    	    <img src = "https://www.khanacademy.org/computer-programming/logo/6662457713967104/5739919542534144.png" width = "85" height = "80" style = "position:relative; right:25px; top:-20px;">
+    	    
+    	    <button onClick = "changePage(1)" class = "nav-buttons" id = "home-button">Home</button>
+    	    <button onClick = "changePage(2)" class = "nav-buttons">Articles</button>
+    	    <button onClick = "changePage(3)" class = "nav-buttons">Interviews</button>
+    	    <button onClick = "changePage(4)" class = "nav-buttons">News</button>
+    	    <button onClick = "changePage(5)" class = "nav-buttons">Reviews</button>
+    	</nav>
+    	
+    	<!--Header -->
+    	<header id = "header">
+    	        <div class = "header-text">
+    	                <p>Fact Checked and Trustworthy</p>
+    	                <h1>The Real News</h1>
+    	        </div>
+    	</header>
+    	
+    	<!--Section #1: Home -->
+    	<section class = "page">
+    	        <div class = "spoiler js-scroll slide-right" id = "one">
+                    <h1>Something happened!</h1>
+                    <p>Yes, it really did!</p>
+                </div>
+                <div class = "container">
+                <div class = "spoiler js-scroll slide-left" id = "two">
+                    <h1>Wow, someone said this!</h1>
+                    <p>They really did!</p>
+                </div>
+                <div class = "spoiler js-scroll slide-left" id = "three">
+                    <h1>Somewhere this happened!</h1>
+                    <p>It's really important!</p>
+                </div>
+              </div>
+    	</section>
+    	
+    	<!--Section #2: Articles -->
+    	<section class = "page">
+    	        <div class = "jump-to">
+    	             <p>Jump ahead!</p>
+    	             <a href = "#article-1">Article 1 Name</a>
+    	             <br>
+    	             <a href = "#article-2">Article 2 Name</a>
+    	        </div>
+    	
+    	        <div class = "content js-scroll slide-left" id = "article-1">
+    	             <h1>This happened!</h1>
+                     <h2 id = "subtitle">by: someone</h2>
+    	             <p>Did you know on some date something happened? Yes its true! It was really ordinary, and mediocre! A statement from an ordinary citizen says, "It was absoultely nothing out of the ordianry! In fact, it was comletely OK!"</p>
+    	         </div>
+    	        <div class = "content js-scroll slide-right" id = "article-2">
+    	             <h1>That also happened!</h1>
+                     <h2 id = "subtitle">by: someone</h2>
+    	             <p>Did you know on some date something happened? Yes its true! It was really ordinary, and mediocre! A statement from an ordinary citizen says, "It was absoultely nothing out of the ordianry! In fact, it was comletely OK!"</p>
+    	        </div>
+    	</section>
+    	
+    	<!--Section #3: Interviews -->
+    	<section class = "page">
+        	<div class = "jump-to">
+    	             <p>Jump ahead!</p>
+    	             <a href = "#interview-1">Interview 1 Name</a>
+    	             <br>
+    	             <a href = "#interview-2">Interview 2 Name</a>
+    	        </div>
+    	        
+    	        <div class = "content js-scroll slide-left" id = "interview-1">
+            	        <h1>"Nothing happened!", says someone</h1>
+                        <h2 id = "subtitle" >by: someone</h2>
+            	        <p> Here's an interview with Simon One.</p>
+            	        <p> <strong>Me:</strong> Did anything happen?</p>
+            	        <p> <strong>Simon:</strong> Nothing happened!</p>
+            	        <p> <strong>Me:</strong> And there you have it folks!</p>
+    	        </div>
+    	        <div class = "content js-scroll slide-right" id = "interview-2">
+            	        <h1>"Ordinary Central!", says someone</h1>
+                        <h2  id = "subtitle">by: someone</h2>
+            	        <p> Here's an interview with Simon One.</p>
+            	        <p> <strong>Me:</strong> Did anything happen?</p>
+            	        <p> <strong>Simon:</strong> Orinary central!</p>
+            	        <p> <strong>Me:</strong> And there you have it folks!</p>
+    	        </div>
+    	        
+    	</section>
+    	
+    	<!--Section #4: Extras -->
+    	<section class = "page ">
+    	        <div class = "jump-to">
+    	              <p>Jump ahead</p> 
+    	              <a href = "#news-1">News 1</a>
+    	              <br>
+    	              <a href = "#news-1">News 2</a>
+    	        </div>
+    	        <div class = "content js-scroll slide-left" id = "news-1">
+    	                <h1>Wow!</h1>
+                        <h2 id = "subtitle">by: someone</h2>
+    	        </div>
+    	        <div class = "content js-scroll slide-right" id = "news-2">
+    	                <h1>Something!</h1>
+                        <h2 id = "subtitle">by: someone</h2>
+    	        </div>
+    	</section>
+    	
+    	<!--Section #5: Reviews -->
+    	<section class = "page">
+    	        <div class ="content js-scroll slide-left" id = "review-program">
+    	                
+    	        </div>
+    	</section>
+    	
+    	<!-- Footer -->
+    	<footer id = "footer">
+            <h2 style = "color:white; text-align:center;">The Real News ©</h2>
+            <hr>
+            <p> Code reserved under the Khan Academy Guidelines. Faluire to follow will result in flagging. <br>If you need to copy, give credit and a link to this.
+            </p>
+            <p style ="text-align:center;">
+                Made with &lt;3 by someone</p>
+            
+        </footer>
+    	
+    	
+        <!-- Page Related Script -->
+        <script type>
+            function changePage(pageNum) {
+                var page = document.getElementsByClassName('page');
+                for(var i = 0; i < page.length; i++) {
+                    page[i].style.display = 'none';
+                }
+                page[pageNum - 1].style.display = 'block';
+                window.scroll(0, 2);
+                
+                
+                var appli = document.getElementById("result");
+                appli.style.display = "none";
+                
+            }
+            changePage(1);
+            
+            function collapseNav() {
+        var navBar = document.getElementById("responsive-nav");
+        var dropdownIcon = document.getElementsByClassName("dropdown-icon");
+        if (navBar.className === "navbar") {
+          navBar.className += " responsive";
+          for (var i = 0; i < dropdownIcon.length; i++) {
+            dropdownIcon[i].innerHTML = '<span class="material-icons">close</span>'
+          }
+        } else {
+          navBar.className = "navbar";
+          for (var i = 0; i < dropdownIcon.length; i++) {
+            dropdownIcon[i].innerHTML = '<span class="material-icons">menu</span>'
+          }
+        }
+        
+      }    
+    </script>
+        
+        <!-- Scrolling -->
+        <script>
+               function slightScroll() {
+                window.scrollTo({
+                  top: 300,
+                  behavior: "smooth"
+                });
+              };
+              
+              function backToTop() {
+                window.scrollTo({
+                  top: 0,
+                  behavior: 'smooth'
+                })
+              };
+        </script>
+        
+        <!--  Scrolling Animation -->
+        <script type>
+      (function() {
+        const scrollElements = document.querySelectorAll(".js-scroll");
+        
+        const elementInView = (el, dividend = 1) => {
+          const elementTop = el.getBoundingClientRect().top;
+          
+          return (
+            elementTop <=
+            (window.innerHeight || document.documentElement.clientHeight) / dividend
+          );
+        };
+        
+        const elementOutofView = (el) => {
+          const elementTop = el.getBoundingClientRect().top;
+          
+          return (
+            elementTop > (window.innerHeight || document.documentElement.clientHeight)
+          );
+        };
+        
+        const displayScrollElement = (element) => {
+          element.classList.add("scrolled");
+        };
+        
+        const hideScrollElement = (element) => {
+          element.classList.remove("scrolled");
+        };
+        
+        const handleScrollAnimation = () => {
+          scrollElements.forEach((el) => {
+            if (elementInView(el, 1.25)) {
+              displayScrollElement(el);
+            } else if (elementOutofView(el)) {
+              hideScrollElement(el)
+            }
+          })
+        }
+        
+        window.addEventListener("scroll", () => {
+          handleScrollAnimation();
+        });
+      })();
+      
+    </script>
+        
+        <!-- Review -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+        var programStats = document.getElementById('review-program');
+
+        $.getJSON("https://www.khanacademy.org/api/internal/scratchpads/5172356072816640?format=pretty&callback=?", function(data) {
+            programStats.innerHTML =
+                '<div class = \'news-and-articles\'><h1><a href = "' + data.url + '" target = "_blank" id = "review-program-title">' + data.title + '</a></h1><img src = "' + data.imageUrl + '" style = "width: 200px; float: right; padding: 10px; border-radius: 10px;"><p id = "review-program-data">Creator: <a href = "https://www.khanacademy.org/profile/' + data.kaid + '" target = "_blank">CreateNameHere</a><br>Vote Count: ' + data.sumVotesIncremented + ' votes<br>Spin-off Count: ' + data.spinoffCount + ' spin-offs<br>Program ID: ' + data.id + '</p><hr><p id = "review-program-data">Graphics: <br>Gameplay: <br>Animation:<br>Overall: <hr></p><p id = "review-program-about">Its a good webpage.</p></div>';
+
+        });
+    </script>
+    </body>
+</html>

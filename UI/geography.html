@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<!-- Today we mourn 200 lines of lost code. I forgot to save it. #Grief Thank you. (Not  #Grief in the <style> </style> tag. That's diff) (It caused me grief cos wasn't working. Had to do God knows what.)-->
+
+<!--------------------------------------------------------------
+
+This webpage is the best I have ever made. EVER. 
+It was a competition between me and my brother (@zainazfar). He chose the topic (Geography) and I decided the language. 
+I, pushed the boundries of what it means to be a webpage. OK, not really. But still.
+Zain also did that. It IS worth mentioning his webpage was based off of mine sooooo.... 
+
+Sure I haven't used the BEST practices, but hey, this is one halfway decent webpage.
+Plus, it was my first time with icons, a ton of buttoNS, transitions, super over the top navigtion, buttons, hoverable buttons, more than one style tag/script tag, jQuaery, and a go to the top button AND a title attribute. (Hover over the  go to top button for a few secs and see it)
+Buttons were v. important part of this journey. :P
+
+------------------------------------------------------------->
+
+<html>
+    <head>
+        <meta charset="utf-8" content="width=device-width, initial-scale=1">
+        <title>Learn Geography</title>
+         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons|Quicksand:600|Google+Sans:400,500">
+        
+        <style>
+                
+                body {
+                        font-family: Google Sans;
+                        scroll-behavior: smooth;
+                }
+                
+                button {
+                    cursor:pointer;
+                    
+            border-radius:15px;
+             transition-delay: 0.2s;
+             transition-duration: 0.5s;
+                }
+                
+                button:hover {border-radius:1px;}
+                
+                h1, h2, h3, h4 {
+                        color:#123C69;
+                }
+                .element:hover {
+  height: 250px;
+  width: 250px;
+  margin: 0 auto;
+  background-color: red;
+  animation-name: stretch;
+  animation-duration: 1.5s; 
+  animation-timing-function: ease-out; 
+  animation-delay: 0;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+  animation-play-state: running;
+}
+
+.element {
+  height: 250px;
+  width: 250px;
+  margin: 0 auto;
+  background-color: red;
+  border-radius:100%;
+  animation-name: something;
+  animation-duration: 1.5s; 
+  animation-timing-function: ease-out; 
+  animation-delay: 0;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+  
+}
+
+@keyframes something {
+  0% {
+    background-color: red;
+  }
+  50% {
+    background-color: orange;
+  }
+  100% {
+    
+  }
+}
+
+@keyframes stretch {
+  0% {
+    background-color: red;
+  }
+  50% {
+    background-color: orange;
+  }
+  100% {
+    background-color: yellow;
+    transform: scale(1.5);
+    border-radius: 100%;
+  }
+}
+        ul {
+                    color:gray;
+                    line-height:25px;
+                }
+                
+                
+                a{
+                    text-decoration:none;
+                  
+                    
+                }
+                
+                a:hover 
+                {
+                    color:rgb(101, 98, 199);
+                }
+                
+                p {
+                        color:rgb(97, 96, 97);
+                        font-family:"Quicksand";
+                }
+                
+                button {
+                        font-family:"Google Sans";
+                }
+                
+                .bold {
+                        color:rgb(97, 64, 230);
+                }
+                
+                ::-webkit-scrollbar {
+                        width:10px;
+                }
+                
+                ::-webkit-scrollbar-track {
+                      background: #f1f1f1;
+                }
+                ::-webkit-scrollbar-thumb {
+                      background:rgb(99, 89, 235);
+                }
+                
+                ::selection {
+                        background:rgb(250, 250, 192);
+                        color:gray;
+                }
+    
+        </style> <!-- General Styles -->
+        <style>
+        
+                
+                #main-title {
+                        color:#123C69;
+                        font-size:49px;
+                }
+                
+                
+                
+        </style> <!-- Div tags-->
+        <style>
+                
+                #Explore-Button {
+                        padding:10px;
+                        width:90px;
+                        font-family:"Google Sans";
+                        outline:none;
+                        border:none;
+                        background:rgb(255, 221, 0);
+                        color:white;
+                        border-radius:25px;
+                        cursor:pointer;
+                }
+                
+                #Explore-Button:hover {
+                        background:rgb(230, 199, 0);
+                }
+                
+                #myBtn {
+                          display:whatever; /* Hidden by default */
+                          position: fixed; /* Fixed/sticky position */
+                          bottom: 8px; /* Place the button at the bottom of the page */
+                          right: 9px; /* Place the button 30px from the right */
+                          z-index: 99; /* Make sure it does not overlap */
+                          border: none; /* Remove borders */
+                          outline: none; /* Remove outline */
+                          background:none;
+                          height:50px;
+                          color: black; /* Text color */
+                          cursor: pointer; /* Add a mouse pointer on hover */
+                          padding: 15px; /* Some padding */
+                          border-radius: 10px; /* Rounded corners */
+                          font-size: 18px; /* Increase font size */
+                        }
+                        
+                        #myBtn:hover {
+                          background-color:rgb(240, 240, 240); /* Add a dark-grey background on hover */
+                        }
+                
+        </style> <!-- Buttons! -->
+        <style>
+              .tab {
+                     position:relative; 
+                     float:right;
+                     margin-right:13px;
+              }  
+              
+                  /* Style the buttons that are used to open the tab content */
+                    .tab button {
+                      background-color: inherit;
+                      position:fixed;
+                      float: center;
+                      border: none;
+                      cursor: pointer;
+                      padding: 14px 16px;
+                      transition: 0.3s;
+                      position:static;
+                }
+                    
+                    /* Create an active/current tablink class */
+                    .tab button.active {
+                      text-decoration:underline;
+                    }
+                    
+                    .tab button.hover {
+                    
+                    }
+                    
+                    /* Style the tab content */
+                    .tabcontent {
+                      display: none;
+                      padding: 6px 12px;
+                      border-top: none;
+                      color:black;
+                      
+    animation: fadeInAnimation ease 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+  
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+     }
+
+                    }
+                              
+                              /* Style the tab content */
+                    .tabcontent {
+                      display: none;
+                      padding: 6px 12px;
+                      border-top: none;
+                      color:black;
+                    }
+              
+              .tablinks {
+                      color:gray;
+                      border:inherit;
+                      background:inherit;
+                      margin:19px;
+              }
+              
+                 /* Create an active/current tablink class */
+    .tab button.active {
+      text-decoration:underline;
+    }
+    
+              
+        </style> <!-- #Grief -->
+        <style>
+                
+                #logo {
+                        color:gray;
+                        position:relative;
+                        top:-319px;
+                }
+                
+                #geo {
+                        color:#123C69;
+                }
+                
+        </style> <!-- My Logo -->
+        
+        <style>
+                #Home {
+                       margin-left:14px;
+                       position:relative;
+                       top:52px;  
+                }
+                
+        </style> <!-- Home page--->
+        <style>
+        
+        #About{
+                margin-left:14px;
+                position:relative;
+                top:74px;  
+                       
+        }
+        </style> <!-- About page-->
+        <style>
+        
+        #Facts{
+                margin-left:14px;
+                position:relative;
+                top:74px;  
+                       
+        }
+        
+        
+        .thing {
+                background:rgb(247, 247, 247);
+                padding:15px;
+                box-shadow:5px 5px rgb(196, 196, 196);
+        }
+        
+        .List {
+            font-size:20px;
+            color:rgb(255, 221, 0);
+        }
+        
+        .readMore {
+            border:none;
+            color:rgb(0, 0, 0);
+            font-size:17px;
+            background:inherit;
+            padding:5px;
+        }
+        
+        .readMore:hover {
+            background:rgb(255, 255, 255);
+        }
+        
+        #pop {
+            margin-top:9px;
+            float:right;
+            position:relative;
+            top:-393px;
+            width:40%;
+        }
+        
+        #Spiffy {
+            margin-top:14px;
+            position:relative;
+            width:95%;
+            height:184px;
+        }
+        
+        #cou {
+            width:45%;
+            position:relative;
+            top:-32px;
+        }
+        
+        </style> <!-- Facts page-->
+        <style> 
+            
+             #cou {
+                
+                position:relative;
+                top:2px;  
+                       
+        }
+        
+        </style> <!-- IDK really.-->
+        <style>
+            
+            .findmore {
+              background:rgb(255, 221, 0);
+              border-radius:15px;
+              border:none;
+              padding:9px;
+             transition-delay: 0.2s;
+             transition-duration: 0.5s;
+              
+                
+            }
+            
+            .findmore:hover {
+                border-radius:1px;
+            }
+            
+            .thing {
+                    margin-bottom:15px;
+            }
+            
+            
+        </style> <!-- Explore Page -->
+        
+        <style>
+              #popula, #count, #spif, #Explore, #Rec, #article, #blogPost {
+                      position:relative;
+                      top:90px;
+              }  
+        </style> <!-- Three things -->
+        
+        <style>
+            #world {
+                position:relative;
+                top:200px;
+                left:460px;
+            }
+        </style> <!-- Icons -->
+        
+    </head>
+    <body>
+        
+        <!-- To the Top Button -->    
+        <button onclick="topFunction()" id="myBtn" title="Go to top"><span class="material-icons">
+expand_less
+</span></button>
+        
+        <!-- Nav buttons -->
+        <div class ="tab">
+              <button class = 'tablinks' onClick='openLink(event,"Home")'   id = "defaultOpen" title = "Hone">Home</button>
+              <button class="tablinks" onclick="openLink(event, 'About')" title = "About"> About</button>
+              <button class="tablinks" onclick="openLink(event, 'Facts')" title = "Facts"> Facts</button>
+              
+        </div>
+    
+        <!-- Main Page -->
+        <div  id = "Home" class = "tabcontent">
+                 <h1 id = "main-title">Learn<br>Geography</h1>
+                 <p>Struggling in geography? Explore our Geography<br>website to enhance your geography experience.</p>
+                 
+                 <button id = "Explore-Button" onClick = "openLink(event, 'Explore')"  title = "Explore">Explore</button>
+                 
+                 <h4 id = "logo"> <span id = "geo">geography</span>.com</h4>
+        </div>
+        
+        <!-- About Page-->
+        <div id = 'About' class = "tabcontent" >
+        
+                <h4 id = "logo"> <span id = "geo">geography</span>.com</h4>
+                <h1>About</h1>
+                <p> Geography - essential to every human being. After all, do we know anything if not our own home?<br>This page is to help master a few basic things - <span  class = "bold">Biggest populations, areas, and of course how to be a good geographer</span>. <br>Onwards!<br><br><br><br> I'd like to thank W3Schools, CSSTricks and KA, for providing a free HTML education. <br>This webpage was  a compitiion between me and my brother. We wanted to see who made the best. In the end, it stopped being a compition, but just a way to extend our abilities. IDK about Zain, but I sure did!</p>
+        </div>
+        
+        <!-- Facts Page-->
+        <div id = 'Facts' class = "tabcontent" >
+        
+                <h1>Facts</h1>
+                <p>Learn some facts- Populations and area (We'll be adding more soon!)</p>
+                
+                <div class = "thing" id = "cou">
+                <h3>Biggest Countries</h3>
+                        <p>The world biggest - in a perfectly functional list!<br>1. <span class = "List"> Russia </span>This mammoth coutry lies first, stretching over 2 continents.<br>2. <span class = "List">  Canada </span> Though not as big as Russia, this huge country has a whopping area of  9 984 670 km^2!<br>3. <span class = "List"> USA </span> Lying next to Canada, United 'Huge' States of America has an area of...</p>
+                <button class = "readMore" onClick = "openLink(event, 'count')">Read more!</button>
+                </div> <!-- Biggest Countries-->
+                
+                <div class = "thing" id = "pop">
+                    <h3>Populations</h3>
+                    <p> Which countries have the most people? Let's find out!<br>1. <span class = "List"> China </span>I mean, that many people... I gotta draw the line.<br>2. <span class = "List"> India </span> Right next me, this country has some serious population.<br>3. <span class = "List"> USA </span> Yep, you guessed it! America takes  3rd place again. #ALottaPeopleALottaSpace...<br></p>
+                     <button class = "readMore" onClick = "openLink(event, 'popula')">Read more!</button>
+                </div> <!-- Biggest Population -->
+                
+                <div class = "thing" id = "Spiffy">
+                    <h3>Populations</h3>
+                    <p>Well, now. You know me, I looove good trivia. OK, no I hate trivia. But this is for those who love it! Take a look at... fun facts! </p>
+                     <button class = "readMore" onClick = "openLink(event, 'spif')">Read more!</button>
+                </div> <!-- Spiffy facts -->
+        </div>
+        
+        <!-- Explore Page -->
+        <div id = "Explore" class = "tabcontent">
+            <h1>Explore</h1>
+            <p>Explore our vast (ish) array of Geography. We offer <span class = "bold">facts, articles and tips. </span></p>
+            
+            <div class = "thing" id = "factswala">
+                <h3>Facts</h3>
+                <p> Let's take a look at some facts - Biggest countries, and biggest populations, plus some that'll blow your mind!</p>
+                <button onClick = "openLink(event, 'Facts')" class = "findmore">Find out more</button>
+            </div> <!-- Facts wala v --> 
+            <div class = "thing" id = "reco">
+                <h3>Resources</h3>
+                <p>Would YOU like to learn further? Take a look at our recsources!</p>
+                <button onClick = "openLink(event, 'Rec')" class = "findmore">Learn</button>
+            </div> <!-- Recources -->
+            <div class = "thing" class = "betterG">
+                
+                <h3>Becoming a Better Geographer</h3>
+                <p> What does it take to be a better Geographer? Veiw our very first blog post here!</p>
+                 
+                <button onClick = "openLink(event, 'blogPost')" class = "findmore">Learn More</button>
+                
+            </div><!-- Becoming a better Geographer-->
+            <div class = "thing" id = "creditsss">
+                <h3>Credits</h3>
+                <p> Who made this webpage possible? Join us as we thank those people and give you some background on this webpage!</p>
+                <button onClick = "openLink(event, 'About')" class = "findmore">Find Out</button>
+            </div><!--  Credits v-->
+        </div>
+        
+        
+        <!-- Resources in HERE -->
+        <div id = "Rec" class = "tabcontent">
+            <h2>Resources</h2>
+            <p> Take a look at these resources to ennhance your learning!</p>
+            <a href = "https://www.nationalgeographic.com/">National Geographic </a>
+            <br>
+            <a href = "https://www.easygeographyforkid.com/">Easy Geography for Kids </a>
+            <br>
+            <a href = "https://www.worldatlas.com"> World Atlas</a>
+            <br>
+            We'll be adding more soon!
+        </div>
+        
+        <!-- Blog in HERE -->
+        <div class = "tabcontent" id = "blogPost">
+             <h2>Blog</h2>
+             <h4>Becoming a Better Geographer</h4>
+             <h5>12/5/2021  By: Z.A</h5>
+             
+             <p> Let's face it: Not all of us are that good at geography. I mean, that's understandble right? It's a HUGE subject: Land masses, countries,  not to mention stuff INSIDE the countries.<br>So, the million (Maybe even billion) dollar question is this: How do I get better?<br>Well, duh, I don't know for sure, but we DO have some tips.<br>Let's take a look: </p>
+             
+             <p><span class = "List"> 1. </span> Keep Learning. OK, this is obvious. You gotta keep learning. Keep seeking knowledge, keep asking questions, keep LEARNING. 
+                 <br>
+                 
+                 <span class = "List">2. </span> Quiz yourself. If you're serious about this subject, you need to quiz yourself. First review your knowledge, and get someone to ask questions. You could also take on some online quizzes.
+                 <br>
+                 
+                 <span class = "List">3.</span>  Maps, maps, maps. Find coutries on a map, and .learn just 1 fact about 20-30 countries. This can go a long way.
+                 <br>
+                 
+                 <span class = "List">4. </span> Try to understand each concept. For example, not like this: "Pakistan has a population of 225,199,937 eactly.', but like, "Pakistan has about 225,000000 population."
+                 <br>
+                 <span class = "List">5. </span> For land masses, there's not much to do. I mean, their are just a few. Learn some of their names, and how they are formed. That's about it. 
+             </p>
+             
+             <h4>Why learn geography?</h4>
+        </div>
+        
+        
+        <!-- Populations -->
+        <div id = "popula" class="tabcontent">
+            <h1>Largest Populations: 2021</h1>
+             Which countries have the most people? Let's find out!<br>
+             1. <span class = "List"> China </span>I mean, that many people... I gotta draw the line.<br>
+             2. <span class = "List"> India </span> Right next me, this country has some serious population.<br>
+             3. <span class = "List"> USA </span> Yep, you guessed it! America takes  3rd place again. #ALottaPeopleALottaSpace<br>
+              4. <span class = "List"> Indonesia </span> This counrty may seem small, but it has A LOT of people. <br>
+               5. <span class = "List"> Pakistan </span> Woo! This is MY country! Go Pakistan!<br>
+                6. <span class = "List"> Brazil </span> Football, space, food, people, what more do ya want? <br>
+                 7. <span class = "List"> Nigeria </span> TBH, I don't know where this is. Seriously. But I hear it has a while lotta people.<br>
+                  8. <span class = "List"> Bangladesh </span>Yea South Asia has people... Round of appluase for Bangladesh!<br>
+                   9. <span class = "List"> Russia </span>It does take up space, but it has much less people. But still 146 Million people. <br>
+                    10. <span class = "List"> Mexico </span>Mexi-co! Mexi-co! I love tacos!!!<br>
+        </div>
+        
+        <!-- Spiffy Facts-->
+        <div id = "spif" class="tabcontent">
+            <h1>Spiffy Facts</h1>
+             <p> Take  a look at these fun facts! </p>
+             <ul>
+                 <li> Russia is <span class = "bold">bigger</span> than Pluto.</li>
+                 <li> Mongolia is the<span class = "bold"> emptiest</span> country.</li>
+                 <li> Lenin <span class = "bold">rose to power in the Soviet Union becuase of Nazis</span>; The enemy.</li>
+                 <li> <span class = "bold">90%</span> of people live  in the Northern hemisphere.</li>
+                 <li> Only Africa in in <span class = "bold">all hemispheres</span>.</li>
+                 <li> <span class = "bold">Lesotho, The Vatican and San Marino</span> are the only three countries in the world that are surrounded entirely by only one country</li>
+                 <li> <span class = "bold">Ethopia and Thailand</span> are the only countries that aren't colonized</li>
+                 <li> There is <span class = "bold">not a single river</span> in Saudi Arabia.</li>
+                 <li> The Greek national anthem consists of<span class = "bold"> 158 verses.</span></li>
+             </ul>
+        </div>
+        
+        <!-- Area -->
+        <div id = "count" class="tabcontent">
+            <h1>Largest Area: 2021</h1>
+            <p>The world biggest - in a perfectly functional list!<br>
+            1. <span class = "List"> Russia </span>This mammoth coutry lies first, stretching over 2 continents.<br>
+            2. <span class = "List">  Canada </span> Though not as big as Russia, this huge country has a whopping area of  9 984 670 km^2!<br>
+            3. <span class = "List"> USA </span> Lying next to Canada, United 'Huge' States of America has an area of 9 833 517 km^2<br>
+             4. <span class = "List"> China </span> China has a lot of people - and a lot of area. ;) <br>
+            5. <span class = "List">  Brazil </span> One of the only represnetitive from South America, please welcome... BRAZIL!<br>
+            6. <span class = "List"> Australia </span>It's funny that a continent is so small... But I won't hold it against them! <br>
+             7. <span class = "List"> India </span>My neighbour, awesome food, India is Big, with a capital B.<br>
+            8. <span class = "List">  Argentina</span> Argentina is so big it takes almost 3rd of a whole continent.<br>
+       9. <span class = "List"> Kazakhstan</span>Kazakhistan has no 'i'. But it has area.<br>
+          10. <span class = "List"> Algeria </span> Algeria has people. What did you expect?<br>
+                      
+            </p>
+        </div>
+        
+        <script>
+      function openLink(evt, linkName) {
+              // Declare all variables
+              var i, tabcontent, tablinks;
+            
+              // Get all elements with class="tabcontent" and hide them
+              tabcontent = document.getElementsByClassName("tabcontent");
+              for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+              }
+            
+              // Get all elements with class="tablinks" and remove the class "active"
+              tablinks = document.getElementsByClassName("tablinks");
+              for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+              }
+            
+              // Show the current tab, and add an "active" class to the button that opened the tab
+              document.getElementById(linkName).style.display = "block";
+              evt.currentTarget.className += " active";
+        }
+            
+            // Get the element with id="defaultOpen" and click on it
+            document.getElementById("defaultOpen").click();
+            
+        </script> <!--Nav JS -->
+        <script>
+            //Get the button:
+            mybutton = document.getElementById("myBtn");
+            
+            // When the user scrolls down 20px from the top of the document, show the button
+            window.onscroll = function() {scrollFunction()};
+            
+            function scrollFunction() {
+              if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+              } else {
+                mybutton.style.display = "none";
+              }
+            }
+            
+            // When the user clicks on the button, scroll to the top of the document
+            function topFunction() {
+              document.body.scrollTop = 0; // For Safari
+              document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+            }
+        </script> <!-- Back 2 top -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+            
+        </script><script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links
+  $("a").on('click', function(event) {
+
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+});
+</script> <!-- Scroll -->
+        
+       
+    </body>
+</html>
